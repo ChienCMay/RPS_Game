@@ -1,4 +1,6 @@
-//Set background in different colour
+
+/*** Reuse code ***/
+//Set background in different colour 
 function setBackgroundColour(name, backColour){
 	var color = backColour;
 	$("#"+name).css({'background-color':color});
@@ -79,6 +81,7 @@ function whoWin(user1, choice1, user2, choice2){
     }
     return winner;
 }
+
 
 
 
