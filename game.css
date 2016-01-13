@@ -1,0 +1,85 @@
+body {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+ul{ margin-top:50px;}
+
+
+li{ 
+	list-style-type: none;
+	font-size:20px;
+}
+
+.ucom{ 
+	 background: lightblue none repeat scroll 0 0;
+    border: 2px solid #a1a1a1;
+    border-radius: 20px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 5px;
+    width: 250px;
+}
+.comcom, .random{ 
+	 background: lightblue none repeat scroll 0 0;
+    border: 2px solid #a1a1a1;
+    border-radius: 20px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 5px;
+    width: 250px;
+}
+
+#who, #new, #home{
+	border: 2px solid #a1a1a1;
+    padding: 2px 0px; 
+    background: lightblue;
+    width: 180px;
+    border-radius: 15px;
+    font-size:20px;
+    margin-top:10px;
+}
+
+ fieldset { 
+ 	background-color: lightblue; 
+ 	height:290px;
+ 	width:700px;
+ 	display:inline;
+ }  
+
+ #paper{
+	margin:0;
+	background-color: lightblue;
+	border:0;
+}
+#scissors{
+	margin:0;
+	background-color: lightblue;
+	border:0;
+}
+#rock{
+	margin:0;
+	background-color: lightblue;
+	border:0;
+}
+
+#message {
+	min-height:80px; 
+	font-size: 20px;
+}
+
+#winnerMessage{
+	font-weight: bold;
+	font-size: 24px;
+}
+#instruction {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+#showSelected{
+	display: none;
+}
+#showSelected1{
+	display: none;
+}

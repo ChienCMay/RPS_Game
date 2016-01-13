@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>You VS Computer</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="core.js"></script>
+<script>
+	$(document).ready(function(){
+		//set userChoic global 
+		var userPick = "";
+		getUserChoic("paper");
+		getUserChoic("scissors");
+		getUserChoic("rock");
+
+		$("#who").click(function(){
+
+			//Winner message should be null after click who win button
+			displayNoneById("winnerMessage");
+
+			//user choice is empty, didn't selected
+			if(userChoice ==''){
+				displayMessageById("instruction", " Please select paper, scissors or rock.");
+			}
+
+			//put the selected image in shows select panel
+			insertImage("uImage", userChoice); 
+			var computerChoice = computerPick();
+			setBackgroundColour(computerChoice, "green");
+			insertImage("compImage", computerChoice);
+			displayById("showSelected");
+
+			var winner = whoWin("You", userChoice, "Computer", computerChoice);
+
+			//find the winner with time out
+			setTimeout( function() {
+
+				
+				displayNoneById("instruction");
+    			if(winner != ""){
+					displayMessageById("winnerMessage", " The winner is "+ winner +"! Try again?");
+				}
+				else
+					displayMessageById("winnerMessage", " It is a draw! Try again?");
+    		}, 2000);
+
+		});
+
+		//new game
+		$("#new").click(function(){
+    			$(location).attr('href', 'uvscomputer.html');
+    	 }); 
+
+		//back home page
+		$("#home").click(function(){
+    			$(location).attr('href', 'index.html');
+    	 }); 
+
+		function getUserChoic(name){
+			$("#"+name).click(function(){ 
+				setBackgroundColour("paper", "lightBlue");
+				setBackgroundColour("scissors", "lightBlue");
+				setBackgroundColour("rock", "lightBlue");
+				userChoice  = name;
+				setBackgroundColour(name, "Black");
+				return userChoice;
+			});
+		}
+	});
+</script>
+</head>
+<body>
+ 
+    <div id="ucomputerHeader"></div>
+    <div id="gamebody"></div>
+    <div id="ucomputerFooter"></div>
+
+    <script>
+        $( "#ucomputerHeader" ).load( "gameStructures.html .ucomputerHeader");
+        $( "#gamebody" ).load( "gameStructures.html fieldset");
+        $( "#ucomputerFooter" ).load( "gameStructures.html .ucomputerFooter");
+    </script>
+
+</body>
+            
+</html> 
+
+
+        

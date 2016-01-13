@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<head>
+<title>Rock, Paper, Scissors Game</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="core.js"></script>
+<script>
+$(document).ready(function(){
+		var computerChoice1 = computerPick();
+		var computerChoice2 = computerPick();
+
+
+		setTimeout( function() {
+			insertImage("c1Image", computerChoice1); 	
+			setBackgroundColour(computerChoice1, "black");
+			displayById("showSelected1");
+		}, 2000);
+		
+		setTimeout( function() {
+			insertImage("c2Image", computerChoice2); 
+			setBackgroundColour(computerChoice2, "green");
+		}, 3000);
+			
+		
+
+		//find the winner
+		var winner = whoWin("Computer 1", computerChoice1, "Computer 2", computerChoice2);
+		setTimeout( function() {
+				displayNoneById("instruction");
+    			if(winner != ""){
+					displayMessageById("winnerMessage", " The winner is "+ winner +"! Try again?");
+				}
+				else
+					displayMessageById("winnerMessage", " It is a draw! Try again?");
+    	}, 5000);	
+
+		//back home page
+		$("#new").click(function(){
+    			$(location).attr('href', 'computervscomputer.html');
+    	 }); 
+
+    	//back home page
+		$("#home").click(function(){
+    			$(location).attr('href', 'index.html');
+    	 }); 
+});
+</script>
+</head>
+<body>
+ 
+    <div id="computersHeader"></div>
+    <div id="gamebody"></div>
+    <div id="computersFooter"></div>
+
+    <script>
+		$( "#computersHeader" ).load( "gameStructures.html .computersHeader");
+        $( "#gamebody" ).load( "gameStructures.html fieldset");
+        $( "#computersFooter" ).load( "gameStructures.html .computersFooter");
+    </script>
+
+</body>
+            
+</html> 
+
+
+        
